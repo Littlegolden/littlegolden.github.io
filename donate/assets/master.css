@@ -63,6 +63,10 @@ body{
     margin: 8px;
 }
 
+.backIco a{
+	text-decoration: none;
+}
+
 .backIco button{
 	-webkit-appearance: none;
     cursor: pointer;
@@ -70,7 +74,7 @@ body{
     color: rgb(118, 119, 122);
     font-size: 14px;
     line-height: 21px;
-    margin-right: 16px;
+    /* margin-right: 16px; */
     width: 32px;
     height: 32px;
     text-align: center;
@@ -256,12 +260,30 @@ h2{
 	background-image: url(img/venmo.jpg);
 }
 
-.headMergerPay{
-	background-image: ;
+.headAliyunCDN{
+	background-image: url(img/aliyun.jpg);
 }
 
 .headQcloud{
 	background-image: url(img/qcloud.jpg);
+}
+
+.cardHeadTagContainer {
+    display: flex;
+    height: 100%;
+}
+
+.cardHeadTagContainer .cardHeadTag{
+    position: relative;
+	height: 0.75rem;
+	top: initial;
+	margin-right: 0.5rem;
+}
+
+.cardHeadTagsMain{
+	position: relative;
+	height: 1.75rem;
+	top: 4.75rem;
 }
 
 .cardHeadTag{
@@ -309,6 +331,10 @@ h2{
     margin: 8px 0px;
     flex: 1 1 0%;
 	margin-bottom: 2rem;
+}
+
+.cardForDev .cardTextDescribe{
+	margin-bottom: 0.625rem;
 }
 
 .producDescribe{
@@ -368,6 +394,10 @@ h2{
 	background-color: rgb(247, 248, 250);
 }
 
+.cardForAliyunCDN button{
+	border-color: #ff6a00;
+}
+
 button.alipay{
 	color: #108EE9;
 	border-color: #108EE9;
@@ -422,17 +452,21 @@ button.qcloud{
 	border-color: #006eff;
 }
 
-.contributorFour{
+#MgpayS1 {
+	cursor: not-allowed;
+}
+
+.contributorBoxContainer{
 	box-sizing: border-box;
     margin-top: 8px;
     height: 60px;
 	/*display: none;*/
+	visibility: hidden;
 }
 
 .ctrbtorsBox{
 	box-sizing: border-box;
     display: flex;
-	visibility: hidden;
 }
 
 .ctrbtorsAvatars{
@@ -505,7 +539,7 @@ button.qcloud{
 
 .qr img, .qrcode img{
 	border-radius: 16px;
-	height: 22.6875rem;
+	/* height: 22.6875rem; */
 	width: 17.5rem;
 }
 
@@ -808,4 +842,54 @@ footer a{
 
 footer a:hover{
 	color: #E7672E;
+}
+
+/* ToolTip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltiptext{
+	background-image: none !important;
+	-webkit-background-clip: border-box !important; 
+	-webkit-text-fill-color: currentColor !important;
+}
+
+.tooltip .tooltiptext {
+	/* 默认右边出现 */
+    visibility: hidden;
+    /* width: 120px; */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+
+    /* 定位 */
+    position: absolute;
+    z-index: 1;
+	
+	/* 改为上方出现 */
+    width: 150px;
+    bottom: 115%;
+    left: 50%; 
+    margin-left: -75px; /* 使用一半宽度 (120/2 = 60) 来居中提示工具 */
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* 添加箭头 */
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* 提示工具底部 */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
 }
