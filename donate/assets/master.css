@@ -475,6 +475,10 @@ button.qcloud{
     margin-right: 8px;
 }
 
+.ctrbtorsAvatars a{
+	text-decoration: none;
+}
+
 .ctrbtorsAvatar{
 	box-sizing: border-box;
     display: flex;
@@ -490,8 +494,21 @@ button.qcloud{
     height: 32px;
     background-position: center center;
     background-repeat: no-repeat;
-    border-radius: 25%;
+    border-radius: 50%;
     overflow: hidden;
+}
+
+.ctrbtorsAvatar .Avatar{
+	width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 2rem;
+    display: inline-block;
+    box-sizing: content-box;
+    color: #fff;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
 }
 
 .ctrCounts{
@@ -504,7 +521,7 @@ button.qcloud{
 
 .ctrDescribe{
 	color: rgb(118, 119, 122);
-    margin-top: 8px;
+    /* margin-top: 8px; */
     margin-bottom: 0px;
     font-size: 10px;
     letter-spacing: -0.6px;
@@ -640,6 +657,10 @@ section.contributorContainer {
     margin: 0px auto;
 }
 
+.contributorCardCotainer{
+	display: flex;
+}
+
 .ctrbutorCardMainCotainer{
 	width: 144px;
     height: 272px;
@@ -649,6 +670,8 @@ section.contributorContainer {
     border-color: rgb(220, 222, 224);
     border-radius: 8px;
     overflow: hidden;
+	margin-right: 2rem;
+	margin-bottom: 2rem;
 }
 
 .ctrbutorCardLogo{
@@ -662,6 +685,10 @@ section.contributorContainer {
 .ctrbutorLogoBox{
 	box-sizing: border-box;
     margin-top: -32px;
+}
+
+.ctrbutorLogoBox a{
+	text-decoration: none;
 }
 
 .ctrbutorAvatar{
@@ -682,6 +709,19 @@ section.contributorContainer {
     background-repeat: no-repeat;
     border-radius: 50%;
     overflow: hidden;
+}
+
+.ctrbutorAvatar .Avatar{
+	width: 4rem;
+    height: 4rem;
+    font-size: 2.1875rem;
+    line-height: 4rem;
+	display: inline-block;
+    box-sizing: content-box;
+    color: #fff;
+    text-align: center;
+    vertical-align: top;
+	text-decoration: none;
 }
 
 .ctrbutorText{
