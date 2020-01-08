@@ -674,6 +674,10 @@ section.contributorContainer {
 	margin-bottom: 2rem;
 }
 
+.ctrbutorCardMainCotainer a:hover, .ctrbutorAvatar:hover{
+    opacity: 0.9;
+}
+
 .ctrbutorCardLogo{
 	display: flex;
     -webkit-box-pack: center;
