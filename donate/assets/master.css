@@ -793,15 +793,16 @@ section.contributorContainer {
 }
 
 
-/* 滚动条 */
 .contributorList{
 	display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
     padding: 16px 0px;
 	overflow-y: hidden;
+	padding-left: 0.625rem;
 }
 
+/* 滚动条 */
 .contributorList::-webkit-scrollbar {
     height: 8px;
     margin: 0px 16px;
