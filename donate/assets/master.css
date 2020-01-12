@@ -4,6 +4,7 @@ html, body{
 	scroll-behavior: smooth;
 	margin: 0;
 	padding: 0;
+	font-family: PingFang, 'Microsoft YaHei','SF Pro Display',Roboto,Noto,Arial,'PingFang SC',sans-serif;
 }
 
 body{
@@ -241,13 +242,14 @@ h2{
     margin: 0px auto;
 }
 
+/* Edge IE 兼容 */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*针对ie*/
-  .cardForDev,
-  .cardForAliyunCDN{
-  	width: 94.375rem;
-  }
+	.cardForDev,
+	.cardForAliyunCDN{
+		width: 94.375rem;
+	}
 }
-@supports (-ms-ime-align: auto) {
+@supports (-ms-ime-align: auto) { /* Edge */
   .cardForDev,
   .cardForAliyunCDN{
   	width: 94.375rem;
@@ -320,6 +322,7 @@ h2{
 
 .switchBtns svg:not([disabled]) {
     color: rgb(231, 103, 46);
+	cursor: pointer;
 }
 
 .contribute, .budgetContainer{
@@ -351,7 +354,7 @@ h2{
 .cardHead{
 	height: 104px;
     position: relative;
-    border-radius: 16px 16px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     background: radial-gradient(circle, rgb(239, 153, 115) 0%, rgb(203, 79, 23) 150%), rgb(231, 103, 46);
 }
 
@@ -456,10 +459,14 @@ h2{
 	color: rgb(118, 119, 122);
     margin-bottom: 0.625rem;
     margin-top: 0px;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: -0.4px;
-    line-height: 20px;
+    line-height: 1.25rem;
     text-transform: uppercase;
+	height: 1.25rem;
+}
+.cardForAliyunCDN .producDescribe{
+	height: 2.5rem;
 }
 
 .priceContent{
@@ -773,6 +780,18 @@ button.qcloud{
 	display: flex;
     padding: 24px;
 	flex-wrap: wrap;
+}
+.recentDealListContent .Avatar {
+	width: 2.5rem;
+	height: 2.5rem;
+	font-size: 1.5rem;
+	line-height: 2.5rem;
+	display: inline-block;
+	box-sizing: content-box;
+	color: #fff;
+	text-align: center;
+	vertical-align: top;
+	text-decoration: none;
 }
 
 .userAvatarBox{
@@ -1158,8 +1177,8 @@ section.contributorContainer {
 }
 
 .ctrbutorTag{
-	font-size: 8px;
-    line-height: 12px;
+	font-size: 12px;
+    line-height: 0.75rem;
     text-transform: uppercase;
     color: rgb(113, 117, 122);
     text-align: center;
@@ -1403,8 +1422,6 @@ footer a:hover{
 
 @media screen and (max-width: 40em){
 	.Navbar {
-		padding-left: 30px;
-		padding-right: 30px;
 		position: relative;
 	}
 }
@@ -1417,6 +1434,10 @@ footer a:hover{
 	}
 	.Navbar{
 	    width: fit-content;
+		width: -moz-fit-content;
+	}
+	.menuContainer{
+		border-bottom: none;
 	}
 }
 
@@ -1554,6 +1575,21 @@ footer a:hover{
     background-color: #f8504b; /*初始颜色*/
     color:#ffffff; /*文字白色*/
     transition: transform 0.5s; /*设置效果出现、消失过渡时间*/
+	border-radius: 50px; /*圆角*/
+	bottom: 30px; /*距离网页底部*/
+	padding: 3px;
+	display: none;
+	height: 50px; /*圆高度*/
+	opacity: 1;
+	position: fixed;
+	right: 30px; /*距离网页右边*/
+	text-align: center; /*文本居中*/
+	width: 50px; /*圆宽度*/
+	overflow: hidden; /*属性规定当内容溢出元素框时，修剪多余内容*/
+	z-index: 9999; /*设置元素的堆叠顺序（在网页的图层顺序），拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
+	line-height: 2.5;
+	color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 }
 
 .scroll-up:hover, .scroll-up:focus { /*悬浮、点击样式*/
@@ -1561,24 +1597,6 @@ footer a:hover{
     color:#ffffff;
     transform: scale(1.1,1.1); /*缩放*/
     transition:all 100ms; /*动画过渡*/
-}
-
-.scroll-up {
-    border-radius: 50px; /*圆角*/
-    bottom: 30px; /*距离网页底部*/
-    padding: 3px;
-    display: none;
-    height: 50px; /*圆高度*/
-    opacity: 1;
-    position: fixed;
-    right: 30px; /*距离网页右边*/
-    text-align: center; /*文本居中*/
-    width: 50px; /*圆宽度*/
-    overflow: hidden; /*属性规定当内容溢出元素框时，修剪多余内容*/
-    z-index: 9999; /*设置元素的堆叠顺序（在网页的图层顺序），拥有更高堆叠顺序的元素总是会处于堆叠顺序较低的元素的前面*/
-    line-height: 2.5;
-    color: #ffffff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
 }
 @media (max-width: 992px){
     .scroll-up {
