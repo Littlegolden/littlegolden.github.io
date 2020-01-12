@@ -236,8 +236,22 @@ h2{
     padding: 16px 0px;
 	overflow-y: hidden;
     width: fit-content;
+	width: -moz-fit-content;
     max-width: 100%;
     margin: 0px auto;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /*针对ie*/
+  .cardForDev,
+  .cardForAliyunCDN{
+  	width: 94.375rem;
+  }
+}
+@supports (-ms-ime-align: auto) {
+  .cardForDev,
+  .cardForAliyunCDN{
+  	width: 94.375rem;
+  }
 }
 
 .ctrBoxText, .budgetContainer{
@@ -437,6 +451,7 @@ h2{
 	margin-bottom: 0.625rem;
 }
 
+
 .producDescribe{
 	color: rgb(118, 119, 122);
     margin-bottom: 0.625rem;
@@ -563,7 +578,6 @@ button.venmo:active{
 	display: inline-block;
 	color: #0070ba;
 	background-image: -webkit-linear-gradient(bottom left, #108EE9, #00c250, #00beff, #0070ba);
-	background-color: #0070ba;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -664,6 +678,8 @@ button.qcloud{
 	-ms-transition: all 0.2s ease-in-out;  
 	-o-transition: all 0.2s ease-in-out;  
 	transition: all 0.2s ease-in-out;  
+	top: 0;
+	width: 280px;
 }
 
 .qrcode{
@@ -675,6 +691,8 @@ button.qcloud{
 	-o-transition: all 0.5s ease-in-out;  
 	transition: all 0.5s ease-in-out;  
 	z-index: 999;
+	top: 0;
+	width: 280px;
 }
 
 .qrcode button{
@@ -690,7 +708,8 @@ button.qcloud{
 .qr img, .qrcode img{
 	border-radius: 15px;
 	/* height: 100%; */
-	width: 17.5rem;
+	max-width: 100%;
+	height: auto;
 }
 
 .show{
