@@ -153,6 +153,19 @@ h2 {
   line-height: 1em;
 }
 
+.btnsp{
+	border-color: #E7672E;
+	color: #E7672E;
+}
+.btnsp:hover{
+	border-color: #B42800;
+	color: #B42800;
+}
+.btnsp:active{
+	bac: #B42800;
+	color: #FFF;
+}
+
 .Header {
   overflow: hidden;
   border-top: 6px solid #E7742E;
@@ -160,6 +173,10 @@ h2 {
   border-image: -webkit-linear-gradient(to right,#2cb51d, #dd4add, #05a6dd, #e8800f)1 10 1; /* 控制边框颜色渐变 */
   border-image: -moz-linear-gradient(to right,#2cb51d, #dd4add, #05a6dd, #e8800f)1 10 1;
   border-image: linear-gradient(to right,#2cb51d, #dd4add, #05a6dd, #e8800f)1 10 1; /* 标准的必须写在最后 */
+  z-index: 20;
+}
+.Header .container{
+	/* position: relative; */
 }
 
 .Header-brand {
@@ -177,8 +194,13 @@ h2 {
 }
 
 .Header-nav {
-  float: right;
-  margin-top: 8px;
+	float: right;
+	margin-top: 8px;
+	box-sizing: border-box;
+	white-space: nowrap;
+	/* position: absolute; */
+	right: 1.5rem;
+	display: flex;
 }
 
 .Header-nav a {
@@ -308,6 +330,129 @@ h2 {
   color: #E7672E;
 }
 
+.Header-nav .nav-item {
+    position: relative;
+    display: inline-block;
+    line-height: 2rem;
+	border: 0;
+    margin: 0 10px;
+    margin-bottom: 5px;
+}
+.dropdown-wrapper {
+    height: 1.8rem;
+	cursor: pointer;
+}
+.dropdown-wrapper .dropdown-title {
+    display: block;
+    font-size: .9rem;
+    font-family: inherit;
+    cursor: inherit;
+    padding: inherit;
+    line-height: 1.4rem;
+    background: transparent;
+    border: none;
+    font-weight: 500;
+    color: #2c3e50;
+}
+.dropdown-wrapper .dropdown-title .arrow {
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid #ccc;
+    border-bottom: 0;
+	vertical-align: middle;
+    margin-top: -1px;
+    margin-left: .4rem;
+}
+.dropdown-wrapper .nav-dropdown {
+    display: none;
+    height: auto!important;
+    box-sizing: border-box;
+    max-height: calc(100vh - 2.7rem);
+    overflow-y: auto;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    padding: .6rem 0;
+    border: 1px solid;
+    border-color: #ddd #ddd #ccc;
+    text-align: left;
+    border-radius: .25rem;
+    white-space: nowrap;
+    margin: 0;
+	z-index: 9999;
+	width: 6.4375rem;
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item {
+    color: inherit;
+    line-height: 1.7rem;
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active, .dropdown-wrapper .nav-dropdown .dropdown-item a:hover {
+    color: #3eaf7c;
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item a {
+    display: block;
+    line-height: 1.7rem;
+    position: relative;
+    border-bottom: none;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 1.5rem 0 1.25rem;
+}
+.dropdown-wrapper.open .nav-dropdown, .dropdown-wrapper:hover .nav-dropdown {
+    display: block!important;
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid #3eaf7c;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 9px;
+}
+.Header-nav .nav-link {
+    font-size: .9rem; 
+    display: flex;
+}
+ol, p, ul {
+    line-height: 1.7;
+}
+ol, ul {
+    padding-left: 1.2em;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.Header .container a, .Header .container img, .Header .container span {
+    display: inline-block;
+}
+.comicsans {
+	background-image: -webkit-linear-gradient(top left, #2df917, #ff3aff, #23c7ff, #ff9a2d, #2df917);
+	background-image: linear-gradient(to top right, #2df917, #ff3aff, #23c7ff, #ff9a2d, #2df917);
+	
+	background-size: 200px auto;
+	color:transparent;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	background-clip: text;
+	animation: ComicSansRainbow 6s linear infinite;
+}
+
+@keyframes ComicSansRainbow {
+    0% { background-position: 0 0; }
+    100% { background-position: 200px 0; }
+}
+
+
 .Intro-brand {
   margin: 85px 0 0 0;
   line-height: 1em;
@@ -360,12 +505,31 @@ footer p.lang {
   height: 350px;
   overflow: hidden;
   border-bottom: 5px solid #FFFFFF;
+  position: relative;
+  cursor: pointer;
 }
-
+.Home-screenshot:hover{
+	opacity: 0.8;
+}
 .Home-screenshot img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+.Home-screenshot:after{
+	content: "　";
+	background: url(../img/play.svg);
+	position: absolute;
+	width: 3.75rem;
+	height: 3.75rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	top: 50%;
+	left: 50%;
+	cursor: pointer;
+}
+.Home-screenshot img:hover{
+	scale: 1.2;
 }
 
 @media only screen and (max-width: 700px) {
