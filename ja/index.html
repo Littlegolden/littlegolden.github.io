@@ -28,6 +28,13 @@
 		
 		  gtag('config', 'UA-155097920-1');
 		</script>
+		<script>
+			window.onload = function() {
+				document.getElementById("video").onclick = function() {
+								self.location='https://www.youtube.com/watch?v=C_QHwUnh430&t=209s'
+					};
+			}
+		</script>
 	</head>
 
 	<body>
@@ -72,7 +79,7 @@
 		</header>
 
 		<div class="animated fadeUp">
-			<figure class="Home-screenshot">
+			<figure class="Home-screenshot" id="video">
 				<img src="../assets/img/render.webp" alt="" width="1151">
 			</figure>
 
